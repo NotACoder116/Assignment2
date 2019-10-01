@@ -4,8 +4,11 @@ async.waterfall([
        
         let x=y=4;
         let z=x*y;
-        console.log(`Area of the Square is ${z}`);
-        callback(null, x);
+        setTimeout(()=>
+        {
+            console.log(`Area of the Square is ${z}`);
+            callback(null, x);
+        },3000)
     },
     function(x,callback) {
         let z=4*x;

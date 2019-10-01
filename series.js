@@ -1,11 +1,14 @@
 let async=require("async");
 async.series([
     function(callback) {
-       
+        console.log("first callback");
         let x=y=4;
         let z=x*y;
-        callback(null, `Area of the Square is ${z}`);
-    },
+        setTimeout(()=>
+        {
+            callback(null, `Area of the Square is ${z}`);
+        },3000)
+   },
     function(callback) {
         let x=4;
         let z=4*x;
